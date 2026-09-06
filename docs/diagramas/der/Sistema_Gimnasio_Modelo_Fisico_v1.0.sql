@@ -1,34 +1,7 @@
-drop index TIENE_CODIGO_FK;
+/* Esquema inicial del Sistema de Gestión de Gimnasio, versión 1.0. */
+/* Ejecutar sobre una base de datos PostgreSQL vacía. */
 
-drop index CODIGO_ACCESO_PK;
-
-drop table CODIGO_ACCESO;
-
-drop index SE_UTILIZA_EN_FK;
-
-drop index INTENTO_ACCESO_PK;
-
-drop table INTENTO_ACCESO;
-
-drop index SE_ASIGNA_A_FK;
-
-drop index TIENE_MEMBRESIA_FK;
-
-drop index UX_MEMBRESIA_MIEMBRO_ACTIVA;
-
-drop index MEMBRESIA_PK;
-
-drop table MEMBRESIA;
-
-drop index UX_MIEMBRO_NUMERO_DOCUMENTO;
-
-drop index MIEMBRO_PK;
-
-drop table MIEMBRO;
-
-drop index PLAN_PK;
-
-drop table PLAN;
+begin;
 
 /*==============================================================*/
 /* Table: CODIGO_ACCESO                                         */
@@ -160,3 +133,5 @@ alter table MEMBRESIA
    add constraint FK_MEMBRESI_TIENE_MEM_MIEMBRO foreign key (MIEMBRO_ID)
       references MIEMBRO (MIEMBRO_ID)
       on delete restrict on update restrict;
+
+commit;
